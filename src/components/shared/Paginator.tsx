@@ -4,7 +4,7 @@ type PaginationProps = {
 }
 
 export function Paginator({ update, page }: PaginationProps) {
-    return <div className="flex content-center justify-between">
+    return <div className="flex items-center justify-between">
         <span>Showing page #{page}</span>
         <div className="flex gap-1">
             {page != 0 ? <button onClick={() => update(-1)}>Prev</button> : <></>}

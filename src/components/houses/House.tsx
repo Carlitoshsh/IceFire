@@ -9,7 +9,7 @@ type HouseCardProps = {
 export default function HouseCard({ house }: HouseCardProps) {
 
     return (
-        <div className="bg-white rounded-lg shadow-md p-6 m-4 w-full max-w-md">
+        <div className="bg-white rounded-lg shadow-md p-6 w-full ">
             <h2 className="text-2xl font-semibold mb-4">{house.name}</h2>
             <div className="space-y-2">
                 {house.words && <Quote quote={house.words} />}

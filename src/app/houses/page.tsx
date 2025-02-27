@@ -12,17 +12,15 @@ export default function List() {
     }
     const { data, page, loading, updatePage } = useApiPaginated<IceAndFireHouse[]>(paginatedProps)
 
-    if(loading) {
-        return <>Loading...</>
-    }
-
     return <>
         <h2>Houses</h2>
         <Paginator update={updatePage} page={page} />
-        <div className="grid grid-cols-2">
-            {data ? data.map((house, i) =>
-                <HouseCard house={house} key={`house` + i} />
-            ) : <>No houses found!</>}
-        </div>
+        {loading
+            ? <>Loading...</>
+            : <div className="grid grid-cols-2 gap-4">
+                {data ? data.map((house, i) =>
+                    <HouseCard house={house} key={`house` + i} />
+                ) : <>No houses found!</>}
+            </div>}
     </>
 }
