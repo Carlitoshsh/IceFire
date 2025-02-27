@@ -21,11 +21,13 @@ export function SwornMembers({ urls }: SwornMembersProps) {
         getData()
     }, [urls])
     return <>
-        <details className="bg-amber-200 p-2">
+        <details className="border-2 p-2">
             <summary>
                 Show members
             </summary>
-            {members.map(((member, index) => <SwornMember key={`member-${index}`} character={member} />))}
+            <div className="grid gap-1 rounded">
+                {members.map(((member, index) => <SwornMember key={`member-${index}`} character={member} />))}
+            </div>
         </details>
     </>
 }

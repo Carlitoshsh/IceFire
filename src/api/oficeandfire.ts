@@ -1,9 +1,10 @@
 import { ApiDefinition } from "../models/ApiDefinition"
 
+const PAGE_SIZE = 10;
 const API_URL = 'https://anapioficeandfire.com'
 
-async function getHouses() {
-    return await callApi(`${API_URL}/api/houses`)
+async function getHouses(page: number) {
+    return await callApi(`${API_URL}/api/houses?page=${page}&pageSize=${PAGE_SIZE}`)
 }
 
 async function getCharacterByUrl(url: string) {

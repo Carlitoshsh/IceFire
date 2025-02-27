@@ -20,6 +20,18 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-domine), Arial, Helvetica, sans-serif;
+  @apply select-none
+}
+
+button {
+  @apply bg-amber-600 text-amber-50 p-2 cursor-pointer
+}
+
+header {
+  @apply px-3 py-3 bg-amber-600 text-amber-50
+}
+
+main {
   @apply mx-20 my-10
 }
 

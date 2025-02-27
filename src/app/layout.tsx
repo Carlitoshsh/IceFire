@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Domine, Geist_Mono } from "next/font/google";
 import "@/css/globals.css";
+import Header from "@/components/shared/Header";
 
 const domine = Domine({
   variable: "--font-domine",
@@ -27,7 +28,10 @@ export default function RootLayout({
       <body
         className={`${domine.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Header />
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
