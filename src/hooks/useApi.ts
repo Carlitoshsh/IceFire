@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { UseApiProps } from "../models/UseApiProps";
+type UseApiProps<T> = {
+    fn: (page: number) => Promise<T>;
+};
 
 export function useApiPaginated<T>({ fn }: UseApiProps<T>) {
     const [data, setData] = useState<T>();
