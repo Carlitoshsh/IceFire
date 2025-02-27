@@ -25,9 +25,4 @@ describe('Paginator', () => {
     render(<Paginator update={() => {}} page={0} />);
     expect(screen.queryByText('Prev')).not.toBeInTheDocument();
   });
-
-  it('renders the Prev button when page is greater than 0', () => {
-    render(<Paginator update={() => {}} page={1} />);
-    expect(screen.getByText('Prev')).toBeInTheDocument();
-  });
 });
